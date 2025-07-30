@@ -76,6 +76,18 @@
 		fi \
 	}; f"
 
+
+	# List aliases
+	aliases = config --get-regexp alias
+
+	co = checkout
+	pub = "!git push origin $(git branch-name)"
+	pubf = "!git push origin $(git branch-name) -f"
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	rhard = "!git reset --hard origin/$(git branch-name)"
+	pullupstream = "!git pull upstream $(git branch-name)"
+	pullorigin = "!git pull origin $(git branch-name)"
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
